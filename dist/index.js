@@ -10,12 +10,18 @@ var _models = require('./models');
 
 var _models2 = _interopRequireDefault(_models);
 
+var _Routes = require('./Routes');
+
+var _Routes2 = _interopRequireDefault(_Routes);
+
 require('babel/register');
 
-var Plugin = function Plugin(sequelize) {
+var Plugin = function Plugin(sequelize, router) {
   _classCallCheck(this, Plugin);
 
   this.db = new _models2['default'](sequelize).getDb();
+
+  new _Routes2['default'](router).setupRoute();
 };
 
 exports['default'] = Plugin;
