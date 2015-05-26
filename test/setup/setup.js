@@ -1,5 +1,6 @@
 module.exports = function() {
   global.expect = global.chai.expect;
+  global.should = global.chai.should();
 
   beforeEach(function() {
     this.sandbox = global.sinon.sandbox.create();
